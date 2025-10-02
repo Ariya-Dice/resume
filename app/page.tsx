@@ -9,6 +9,7 @@ import CanvasEffect from '@/components/CanvasEffect';
 
 export default function ResumePage() {
   const [lang, setLang] = useState<'en' | 'fa'>('en');
+  // Get translations object
   const t = translations[lang];
 
   useEffect(() => {
@@ -20,8 +21,10 @@ export default function ResumePage() {
     setLang(current => (current === 'en' ? 'fa' : 'en'));
   };
 
+  // Update: Define projects with the translation keys for titles and links
   const projects = [
-    { id: 'p1', link: 'https://daypay.vercel.app/' },
+    // The key 'p1' will be used to look up 'p1', 'p1Desc', and 'p1Link' in the 't' object.
+    { id: 'p1' },
     { id: 'p2' },
     { id: 'p3' },
     { id: 'p4' },
@@ -44,6 +47,7 @@ export default function ResumePage() {
             <p className="mt-2">{t.emailLabel}: <a href="mailto:abdollahiyansaeed@gmail.com" className="project-link">abdollahiyansaeed@gmail.com</a></p>
             <p>{t.phoneLabel}: <a href="tel:+989368013251" className="project-link" style={{ unicodeBidi: 'isolate', direction: 'ltr', display: 'inline-block' }}>+98 936 801 3251</a></p>
             <p>{t.githubLabel}: <a href="https://github.com/Ariya-Dice" target="_blank" rel="noopener noreferrer" className="project-link">Ariya-Dice</a></p>
+            <p>{t.twitterLabel}: <a href={t.twitter} target="_blank" rel="noopener noreferrer" className="project-link">{t.twitter.replace('https://', '').replace('http://', '')}</a></p>
           </div>
         </header>
 
@@ -79,7 +83,8 @@ export default function ResumePage() {
                 key={p.id}
                 title={t[p.id as keyof typeof t]}
                 description={t[`${p.id}Desc` as keyof typeof t]}
-                link={p.link}
+                // Update: Retrieve the link using the translation key (e.g., 'p1Link')
+                link={t[`${p.id}Link` as keyof typeof t]}
                 viewProjectText={t.viewProject}
               />
             ))}
@@ -113,9 +118,6 @@ export default function ResumePage() {
                 <h3 className="text-2xl font-bold mb-2 text-blue-700">🟢 {t.starterPackageTitle} - {t.starterPackagePrice}</h3>
                 <p className="text-lg mb-3">({t.starterPackageTagline})</p>
                 <ul className="list-disc ml-5 space-y-1">
-                  <li>{t.deliveryTime}: <span className="font-semibold">{t.starterPackageDelivery}</span></li>
-                  <li>{t.revisions}: <span className="font-semibold">{t.starterPackageRevisions}</span></li>
-                  <li>{t.includes}</li>
                   <ul className="list-circle ml-8">
                     <li>{t.starterPackageIncludes1}</li>
                     <li>{t.starterPackageIncludes2}</li>
@@ -130,9 +132,6 @@ export default function ResumePage() {
                 <h3 className="text-2xl font-bold mb-2 text-yellow-700">🟡 {t.professionalPackageTitle} - {t.professionalPackagePrice}</h3>
                 <p className="text-lg mb-3">({t.professionalPackageTagline})</p>
                 <ul className="list-disc ml-5 space-y-1">
-                  <li>{t.deliveryTime}: <span className="font-semibold">{t.professionalPackageDelivery}</span></li>
-                  <li>{t.revisions}: <span className="font-semibold">{t.professionalPackageRevisions}</span></li>
-                  <li>{t.includes}</li>
                   <ul className="list-circle ml-8">
                     <li>{t.professionalPackageIncludes1}</li>
                     <li>{t.professionalPackageIncludes2}</li>
@@ -142,24 +141,7 @@ export default function ResumePage() {
                 </ul>
               </div>
 
-              {/* Ultimate Package */}
-              <div className="border p-4 rounded-lg shadow-sm bg-gradient-to-r from-red-50 to-red-100">
-                <h3 className="text-2xl font-bold mb-2 text-red-700">🔵 {t.ultimatePackageTitle} - {t.ultimatePackagePrice}</h3>
-                <p className="text-lg mb-3">({t.ultimatePackageTagline})</p>
-                <ul className="list-disc ml-5 space-y-1">
-                  <li>{t.deliveryTime}: <span className="font-semibold">{t.ultimatePackageDelivery}</span></li>
-                  <li>{t.revisions}: <span className="font-semibold">{t.ultimatePackageRevisions}</span></li>
-                  <li>{t.includes}</li>
-                  <ul className="list-circle ml-8">
-                    <li>{t.ultimatePackageIncludes1}</li>
-                    <li>{t.ultimatePackageIncludes2}</li>
-                    <li>{t.ultimatePackageIncludes3}</li>
-                    <li>{t.ultimatePackageIncludes4}</li>
-                    <li>{t.ultimatePackageIncludes5}</li>
-                    <li>{t.ultimatePackageIncludes6}</li>
-                  </ul>
-                </ul>
-              </div>
+
 
               {/* Specialized Service: Decentralized Payment Gateway */}
               <div className="border p-4 rounded-lg shadow-sm bg-gradient-to-r from-purple-50 to-purple-100">
@@ -170,7 +152,6 @@ export default function ResumePage() {
                   <li>{t.specializedServiceFeatures2}</li>
                   <li>{t.specializedServiceSecurity}</li>
                 </ul>
-                <p className="text-xl font-bold">{t.price}: <span className="text-green-600">{t.specializedServicePrice}</span></p>
               </div>
 
               {/* What I need to start Section */}

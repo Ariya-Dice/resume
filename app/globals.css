@@ -15,15 +15,15 @@ body {
     background-image:
         repeating-linear-gradient(
             0deg,
-            rgba(255, 255, 255, 0.03) 0px,
-            rgba(255, 255, 255, 0.03) 1px,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.9) 1px,
             transparent 1px,
             transparent 2px
         ),
         repeating-linear-gradient(
             90deg,
-            rgba(255, 255, 255, 0.03) 0px,
-            rgba(255, 255, 255, 0.03) 1px,
+            rgba(255, 255, 255, 0.9) 0px,
+            rgba(255, 255, 255, 0.9) 1px,
             transparent 1px,
             transparent 2px
         );
@@ -32,15 +32,17 @@ body {
 
 /* --- باکس رزومه اصلی (با مقادیر اولیه شما) --- */
 .resume-container {
-    background-color: #2d3748;
+    background-color: rgba(45, 55, 72, 0.1); /* 0.85 یعنی 85٪ شفافیت */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     max-width: 900px;
-    margin: 5rem auto; /* بازگردانی به مقدار اولیه */
-    padding: 5rem 2rem; /* بازگردانی به مقدار اولیه */
+    margin: 5rem auto;
+    padding: 5rem 2rem;
     border-radius: 1rem;
-    position: relative; /* برای اطمینان از قرارگیری روی افکت */
+    position: relative;
     z-index: 1;
+    backdrop-filter: blur(6px); /* اختیاری: افکت بلور پشت زمینه */
 }
+
 
 /* --- استایل‌های عنوان هر بخش --- */
 .section-title {
