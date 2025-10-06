@@ -28,6 +28,7 @@ export default function ResumePage() {
     { id: 'p2' },
     { id: 'p3' },
     { id: 'p4' },
+    { id: 'p5' },
   ];
 
   return (
@@ -115,7 +116,7 @@ export default function ResumePage() {
             <div className="space-y-6">
               {/* Starter Package */}
               <div className="border p-4 rounded-lg shadow-sm bg-gradient-to-r from-blue-50 to-blue-100">
-                <h3 className="text-2xl font-bold mb-2 text-blue-700">🟢 {t.starterPackageTitle} - {t.starterPackagePrice}</h3>
+                <h3 className="text-2xl font-bold mb-2 text-blue-700">🟢 {t.starterPackageTitle}</h3>
                 <p className="text-lg mb-3">({t.starterPackageTagline})</p>
                 <ul className="list-disc ml-5 space-y-1">
                   <ul className="list-circle ml-8">
@@ -129,7 +130,7 @@ export default function ResumePage() {
 
               {/* Professional Package */}
               <div className="border p-4 rounded-lg shadow-sm bg-gradient-to-r from-yellow-50 to-yellow-100">
-                <h3 className="text-2xl font-bold mb-2 text-yellow-700">🟡 {t.professionalPackageTitle} - {t.professionalPackagePrice}</h3>
+                <h3 className="text-2xl font-bold mb-2 text-yellow-700">🟡 {t.professionalPackageTitle}</h3>
                 <p className="text-lg mb-3">({t.professionalPackageTagline})</p>
                 <ul className="list-disc ml-5 space-y-1">
                   <ul className="list-circle ml-8">

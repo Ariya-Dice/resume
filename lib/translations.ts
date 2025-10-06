@@ -37,6 +37,9 @@ export type TranslationContent = {
   p4: string;
   p4Link: string;
   p4Desc: string;
+  p5: string;
+  p5Link: string;
+  p5Desc: string;
   button: string;
 
   // Web3 Game Development Services
@@ -130,6 +133,9 @@ export const translations: { en: TranslationContent; fa: TranslationContent } = 
     p4: "Online Service Marketplace",
     p4Link: "",
     p4Desc: "Scalable online marketplace platform with geolocation-based service matching, secure user authentication, and integrated payment processing, optimized for future blockchain upgrades.",
+    p5: "DeviceBound Wallet",
+    p5Link: "https://deviceboundwallet.vercel.app/",
+    p5Desc: "A device-bound crypto wallet demo using passkeys (WebAuthn) for secure, device-tied sessions and a local-first UX.",
     button: "فارسی",
 
     // Web3 Game Development Services
@@ -150,7 +156,7 @@ export const translations: { en: TranslationContent; fa: TranslationContent } = 
     // Starter Package
     starterPackageTitle: "Starter (MVP)",
     // New property added
-    starterPackagePrice: "$2,000+", 
+    starterPackagePrice: "", 
     starterPackageTagline: "Ideal for validating concepts or deploying lightweight on-chain prototypes.",
     starterPackageRevisions: "2",
     starterPackageIncludes1: "Custom smart contract for core game logic.",
@@ -161,7 +167,7 @@ export const translations: { en: TranslationContent; fa: TranslationContent } = 
     // Professional Package
     professionalPackageTitle: "Professional (DApp)",
     // New property added
-    professionalPackagePrice: "$5,000+",
+    professionalPackagePrice: "",
     professionalPackageTagline: "Optimized for building comprehensive, feature-rich applications.",
     professionalPackageRevisions: "3",
     professionalPackageIncludes1: "Everything in Starter +",
@@ -222,6 +228,9 @@ export const translations: { en: TranslationContent; fa: TranslationContent } = 
     p4: "بازار خدمات آنلاین",
     p4Link: "",
     p4Desc: "پلتفرم بازار آنلاین مقیاس‌پذیر با تطبیق خدمات بر اساس موقعیت جغرافیایی، احراز هویت امن کاربران و پردازش پرداخت‌های یکپارچه، بهینه‌شده برای ارتقاهای آینده بلاکچین.",
+    p5: "DeviceBound Wallet",
+    p5Link: "https://deviceboundwallet.vercel.app/",
+    p5Desc: "دموی کیف‌پول وابسته‌به‌دستگاه با استفاده از پس‌کی (WebAuthn) برای نشست‌های ایمن و تجربه کاربری محلی.",
     button: "English",
 
     // Web3 Game Development Services
@@ -242,7 +251,7 @@ export const translations: { en: TranslationContent; fa: TranslationContent } = 
     // Starter Package
     starterPackageTitle: "بسته شروع (Starter MVP)",
     // New property added
-    starterPackagePrice: "۲۰۰۰ دلار به بالا",
+    starterPackagePrice: "",
     starterPackageTagline: "ایده‌آل برای اعتبارسنجی مفاهیم یا استقرار پروتوتایپ‌های سبک آن‌چین.",
     starterPackageRevisions: "۲",
     starterPackageIncludes1: "قرارداد هوشمند سفارشی برای منطق پایه بازی.",
@@ -253,7 +262,7 @@ export const translations: { en: TranslationContent; fa: TranslationContent } = 
     // Professional Package
     professionalPackageTitle: "بسته حرفه‌ای (Professional DApp)",
     // New property added
-    professionalPackagePrice: "۵۰۰۰ دلار به بالا",
+    professionalPackagePrice: "",
     professionalPackageTagline: "بهینه برای ساخت اپلیکیشن‌های جامع و غنی از ویژگی.",
     professionalPackageRevisions: "۳",
     professionalPackageIncludes1: "همه موارد بسته شروع +",

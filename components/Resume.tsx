@@ -1,7 +1,7 @@
 // components/Resume.tsx
 import React, { FC, ReactNode } from 'react';
 
-// کامپوننت کمکی برای نمایش متن‌های bold شده (مثل قبل)
+// Helper component to render bold segments surrounded by ** ** markers
 export const BoldText: FC<{ text: string }> = ({ text }) => {
   const parts = text.split(/\*\*(.*?)\*\*/g);
   return (
@@ -13,10 +13,10 @@ export const BoldText: FC<{ text: string }> = ({ text }) => {
   );
 };
 
-// کامپوننت برای هر بخش از رزومه
+// Component for each resume section
 interface SectionProps {
   title: string;
-  children: ReactNode; // از ReactNode استفاده شد.
+  children: ReactNode; // Use ReactNode to allow any valid React children
 }
 export const Section: FC<SectionProps> = ({ title, children }) => (
   <section className="mb-8 p-4 border-b border-gray-200 last:border-b-0">
@@ -27,10 +27,10 @@ export const Section: FC<SectionProps> = ({ title, children }) => (
   </section>
 );
 
-// کامپوننت برای هر کارت پروژه
+// Component for each project card
 interface ProjectCardProps {
   title: string;
-  description: string; // شامل متن bold شده مارک‌داون
+  description: string; // Supports bold segments via markdown-like **text**
   link?: string;
   viewProjectText: string;
 }
@@ -48,13 +48,13 @@ export const ProjectCard: FC<ProjectCardProps> = ({ title, description, link, vi
         className="text-sm text-indigo-600 hover:text-indigo-800 transition-colors duration-150 inline-flex items-center"
       >
         {viewProjectText}
-        {/* You can add an icon here for a professional touch, like an arrow or external link icon */}
+        {/* Optional: add an icon (e.g., external-link) for a professional touch */}
       </a>
     )}
   </div>
 );
 
-// کامپوننت اصلی برای ساختاردهی کل رزومه
+// Main container component for the entire resume layout
 export const ResumeContainer: FC<{ children: ReactNode }> = ({ children }) => (
     <div className="max-w-4xl mx-auto bg-white shadow-2xl rounded-lg p-10 mt-10 font-sans">
         {children}
