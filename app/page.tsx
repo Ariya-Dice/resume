@@ -29,6 +29,7 @@ export default function ResumePage() {
     { id: 'p3' },
     { id: 'p4' },
     { id: 'p5' },
+	{ id: 'p6' },
   ];
 
   return (
